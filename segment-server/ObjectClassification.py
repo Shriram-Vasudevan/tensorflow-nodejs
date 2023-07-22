@@ -34,8 +34,8 @@ def segment():
     output_dict = model(input_tensor)
 
     num_detections = int(output_dict.pop('num_detections'))
-    output_dict = {key: value[0, :num_detections].numpy()
-                   for key, value in output_dict.items()}
+    output_dict = {k: v[0, :num_detections].numpy()
+                   for k, v in output_dict.items()}
     output_dict['detection_classes'] = output_dict['detection_classes'].astype(np.int)
 
     height, width, _ = image.shape
