@@ -1,8 +1,12 @@
 FROM nikolaik/python-nodejs:latest
 
-
 # Create app directory
 WORKDIR /usr/src/app
+
+# Install necessary packages for cv2
+RUN apt-get update && apt-get install -y \
+    libgl1-mesa-dev \
+    libglib2.0-0
 
 # Copy both package.json (for Node.js) and requirements.txt (for Python)
 COPY package*.json ./
