@@ -1,2 +1,2 @@
 # tensorflow-nodejs
-simple server for interacting with tensorflow via node js
+simple server for interacting with tensorflow
